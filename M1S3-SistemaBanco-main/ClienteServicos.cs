@@ -4,10 +4,6 @@ namespace M1S3_SistemaBanco
     public class ClienteServicos : IClienteServicos
     {
         public static List<Cliente> clientes = new List<Cliente>();
-        public virtual Cliente BuscarPorNumeroDeConta(int numeroConta)
-        {
-            return clientes.Find(x => x.NumeroConta == numeroConta);
-        }
         public void ExibirClientes()
         {
             Console.WriteLine("Número da conta        | Nome         | CPF    ");
@@ -43,6 +39,7 @@ namespace M1S3_SistemaBanco
                 Console.WriteLine("Numero Da Conta");
                 clientePf.NumeroConta = int.Parse(Console.ReadLine());
                 clientes.Add(clientePf);
+                Console.WriteLine("Conta criada com sucesso!");
             }
             else if (tipoConta == "2")
             {
@@ -62,18 +59,15 @@ namespace M1S3_SistemaBanco
                 Console.WriteLine("Numero Da Conta");
                 clientePj.NumeroConta = int.Parse(Console.ReadLine());
                 clientes.Add(clientePj);
+                Console.WriteLine("Conta criada com sucesso!");
 
             }
         }
 
-        internal static Cliente BuscarClientePorNumeroDeConta(int numeroConta)
+        public Cliente BuscarClientePorNumeroDeConta(int numeroConta)
         {
-            throw new NotImplementedException();
+            return clientes.Find(x => x.NumeroConta == numeroConta);
         }
 
-        Cliente IClienteServicos.BuscarClientePorNumeroDeConta(int numeroConta)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -9,7 +9,7 @@ namespace M1S3_SistemaBanco
         public int NumeroConta { get; set; }
         public double Saldo {  get {return GetSaldo(); }  private set{} }
 
-        public List<Transacao> Extrato { get; set; }
+        public List<Transacao> Extrato { get; set; } = new List<Transacao>();
 
         public Cliente() 
         {

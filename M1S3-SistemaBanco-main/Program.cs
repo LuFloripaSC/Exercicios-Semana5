@@ -2,6 +2,7 @@
 using System.Globalization;
 using M1S3_SistemaBanco;
 
+
 ClienteServicos clienteServicos = new ClienteServicos();
 
 ClienteServicos.clientes.Add(new PessoaFisica("Vitor", "123456", "vitor@email","123", "rua",
@@ -59,7 +60,7 @@ void AdicionarTransacao()
   Console.WriteLine("Qual a conta?");
   int numeroConta = int.Parse(Console.ReadLine());
 
-  Cliente contaCliente = ClienteServicos.BuscarClientePorNumeroDeConta(numeroConta);
+  Cliente contaCliente = clienteServicos.BuscarClientePorNumeroDeConta(numeroConta);
 
   if (contaCliente == null)
   {
@@ -78,7 +79,7 @@ void ExibirExtrato()
   Console.WriteLine("Qual a conta?");
   int numeroConta = int.Parse(Console.ReadLine());
 
-  Cliente contaCliente = ClienteServicos.BuscarClientePorNumeroDeConta(numeroConta);
+  Cliente contaCliente = clienteServicos.BuscarClientePorNumeroDeConta(numeroConta);
 
   if (contaCliente == null){
     Console.WriteLine("Conta não cadastrada, favor cadastrar antes");
